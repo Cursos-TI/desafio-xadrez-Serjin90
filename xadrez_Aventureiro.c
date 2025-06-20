@@ -30,21 +30,25 @@ int main(void){
         switch(opt1){
             case 'R':
                 for(int r = 0; r < mov_torre; r++){
-                    printf("\tDireita ->\n");
+                    printf("\tDireita →\n");
                     usleep(400000);// Atraso de 400 ms
                 }
                 break;
             case 'B':
-                for(int b = 0; b < mov_bispo; b++){
+                int b = 0; // Inicializada variável de incremento
+                while(b < mov_bispo){
                     printf("\tCima ↑, Direita →\n");
                     usleep(400000);// Atraso de 400 ms
+                    b++;
                 }
                 break;
             case 'Q':
-                for(int q = 0; q < mov_rainha; q++){
+                int q = 0;// Inicializada variável de incremento
+                do{
                     printf("\t← Esquerda\n");
                     usleep(400000);// Atraso de 400 ms
-                }
+                    q++;
+                }while(q < mov_rainha);
                 break;
             case 'K':
                 for(int k1 = 0; k1 < cavalo1; k1++){    // Laços aninhados
